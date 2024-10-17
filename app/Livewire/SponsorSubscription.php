@@ -32,7 +32,7 @@ final class SponsorSubscription extends Component
         $this->validate(['amount' => 'required']);
 
         if (! Auth::check()) {
-            $this->emit('openModal', 'modals.anonymous-sponsors', [
+            $this->dispatch('openModal', component: 'modals.anonymous-sponsors', arguments: [
                 'amount' => $this->amount,
                 'option' => $this->option,
                 'currency' => $this->currency,

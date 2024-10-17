@@ -132,7 +132,7 @@ final class MarkdownX extends Component
             $type = explode('/', $type)[1];
 
             if (! in_array($type, config('markdownx.image.allowed_file_types'))) {
-                $this->dispatchBrowserEvent('markdown-x-image-uploaded', [
+                $this->dispatch('markdown-x-image-uploaded', [
                     'status' => 400,
                     'message' => 'File type not supported. Must be of type '.implode(', ', config('markdownx.image.allowed_file_types')),
                     'key' => $payload->key,
