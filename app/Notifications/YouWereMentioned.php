@@ -27,7 +27,7 @@ final class YouWereMentioned extends Notification implements ShouldQueue
         /** @var Thread $thread */
         $thread = $this->reply->replyAble;
 
-        return (new MailMessage())
+        return (new MailMessage)
             ->subject(__('Nouvelle mention: :subject', ['subject' => $thread->subject()]))
             ->line(__(':name vous a mentionné dans le sujet :subject', ['name' => $this->reply->user?->name, 'subject' => $thread->subject()]))
             ->action(__('Afficher'), url($thread->getPathUrl()."#reply-{$this->reply->id}"))

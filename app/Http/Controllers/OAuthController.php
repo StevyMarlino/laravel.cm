@@ -19,7 +19,7 @@ final class OAuthController extends Controller
 
     public function redirectToProvider(string $provider): RedirectResponse|\Symfony\Component\HttpFoundation\RedirectResponse
     {
-        if ( ! in_array($provider, $this->getAcceptedProviders(), true)) {
+        if (! in_array($provider, $this->getAcceptedProviders(), true)) {
             return redirect()
                 ->route('login')
                 ->withErrors(__('La connexion via :provider n\'est pas disponible', ['provider' => e($provider)]));
@@ -66,7 +66,7 @@ final class OAuthController extends Controller
 
     private function updateOrRegisterProvider(User $user, SocialUser $socialiteUser, string $provider): void
     {
-        if ( ! $user->hasProvider($provider)) {
+        if (! $user->hasProvider($provider)) {
             $user->providers()->save(new SocialAccount([
                 'provider' => $provider,
                 'provider_id' => $socialiteUser->id,

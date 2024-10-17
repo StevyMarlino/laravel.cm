@@ -32,7 +32,7 @@ final class NewCommentNotification extends Notification implements ShouldQueue
 
     public function toMail(): MailMessage
     {
-        return (new MailMessage())
+        return (new MailMessage)
             ->subject("Re: {$this->discussion->subject()}")
             ->line(__('@:name a répondu à ce sujet.', ['name' => $this->reply->user?->username]))
             ->line($this->reply->excerpt(150))

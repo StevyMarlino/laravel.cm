@@ -22,18 +22,23 @@ final class MarkdownHelper
                     switch ($matchArray[1]) {
                         case 'youtube':
                             $html = self::replaceYouTubeTag($html, $matchArray, $match);
+
                             break;
                         case 'codepen':
                             $html = self::replaceCodePenTag($html, $matchArray, $match);
+
                             break;
                         case 'codesandbox':
                             $html = self::replaceCodeSandboxTag($html, $matchArray, $match);
+
                             break;
                         case 'buymeacoffee':
                             $html = self::replaceBuyMeACoffeeTag($html, $matchArray, $match);
+
                             break;
                         case 'giphy':
                             $html = self::replaceGiphyTag($html, $matchArray, $match);
+
                             break;
                     }
                 }

@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Schema;
 use Laravelcm\Subscriptions\Models\Feature;
 use Laravelcm\Subscriptions\Models\Subscription;
 
-return new class() extends Migration
+return new class extends Migration
 {
     public function up(): void
     {

@@ -48,7 +48,7 @@ final class RegisterController extends Controller
 
         $user = User::query()->where('email', $socialUser['email'])->first();
 
-        if ( ! $user) {
+        if (! $user) {
             /** @var User $user */
             $user = User::query()->create([
                 'name' => $socialUser['name'],
@@ -67,7 +67,7 @@ final class RegisterController extends Controller
             ], 401);
         }
 
-        if ( ! $user->hasProvider($socialUser['provider'])) {
+        if (! $user->hasProvider($socialUser['provider'])) {
             $user->providers()->save(new SocialAccount([
                 'provider' => mb_strtolower($socialUser['provider']),
                 'provider_id' => $socialUser['id'],

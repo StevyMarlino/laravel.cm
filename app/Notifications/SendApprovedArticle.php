@@ -23,7 +23,7 @@ final class SendApprovedArticle extends Notification implements ShouldQueue
 
     public function toMail(): MailMessage
     {
-        return (new MailMessage())
+        return (new MailMessage)
             ->subject(__('Article Approuvé 🎉.'))
             ->greeting(__('Article Approuvé 🎉.'))
             ->line(__('Merci d\'avoir soumis votre article pour créer du contenu au sein de Laravel Cameroun.'))

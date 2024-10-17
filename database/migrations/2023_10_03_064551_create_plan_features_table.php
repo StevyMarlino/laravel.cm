@@ -7,7 +7,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Laravelcm\Subscriptions\Models\Plan;
 
-return new class() extends Migration
+return new class extends Migration
 {
     public function up(): void
     {

@@ -33,7 +33,7 @@ abstract class AbstractFilters
 
     public function resolverFilter(string $filter): mixed
     {
-        return new $this->filters[$filter]();
+        return new $this->filters[$filter];
     }
 
     public function getFilters(): array

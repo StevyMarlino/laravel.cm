@@ -32,9 +32,6 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Permission\Traits\HasRoles;
 
-/**
- * @mixin IdeHelperUser
- */
 final class User extends Authenticatable implements FeaturableInterface, FilamentUser, HasAvatar, HasMedia, HasName, MustVerifyEmail
 {
     use Featurable;
@@ -205,7 +202,7 @@ final class User extends Authenticatable implements FeaturableInterface, Filamen
 
         $user = self::where('email', $socialEmail)->first();
 
-        if ( ! $user) {
+        if (! $user) {
             $user = self::create([
                 'name' => $socialUser->getName() ?? $socialUser->getNickName() ?? $socialUser->getId(),
                 'email' => $socialEmail,
